@@ -29,16 +29,15 @@ The script will open whatever camera is considered camera-id 0 by OpenCV,
 capture frames to a numpy array, resize those frames to 1/4 scale, 
 convert those frames to grayscale, and start writing those frames to the 
 VideoWrapper class. The VideoWrapper class contains a Video protocol buffer 
-as defined in  video.proto. The frames are converted to grayscale and 
-downsized by 1/4  before saving. This will continue until a Ctl+C keyboard 
+as defined in  video.proto. This will continue until a Ctl+C keyboard 
 interrupt.
  
 On interrupt the camera is closed, the Video protocol buffer is serialized 
-and written to disk. Default is "video_out.video_pb2" file name.
+and written to disk. Default file is "video_out.video_pb2".
  
 The serialized video file is then read back in, the video parsed, the 
-frames converted to OpenCV images, and displayed for 33 ms each using the
-cv2.imshow() command.
+frames converted to OpenCV images(numpy arrays in python), and displayed for 
+33 ms each using the cv2.imshow() command.
  
 ## Caveats
  

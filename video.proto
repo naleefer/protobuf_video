@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package video;
+
+message Image {
+    required int64 timestamp = 1;
+    required int32 cols = 2;
+    required int32 rows = 3;
+    required int32 channels = 4;
+    required string format = 5;
+
+    required bytes image_bytes = 6;
+}
+
+message Video {
+    repeated Image frames = 1;
+}

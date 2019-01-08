@@ -1,0 +1,6 @@
+*.video_pb2
+*.bytes
+*.image_pb2
+__pycache__
+.idea
+video_pb2*

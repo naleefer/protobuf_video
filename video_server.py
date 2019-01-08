@@ -10,7 +10,7 @@ def main():
 
     context = zmq.Context()
     socket = context.socket(zmq.PUB)
-    socket.bind("tcp://10.0.0.17:5556")
+    socket.bind("tcp://10.0.0.11:5556")
 
     read = True
     num_frames = 0

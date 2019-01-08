@@ -8,7 +8,7 @@ def main():
     socket = context.socket(zmq.SUB)
 
     print("Collecting images from server...")
-    socket.connect("tcp://10.0.0.17:5556")
+    socket.connect("tcp://10.0.0.11:5556")
 
     g_run = True
     num_frames = 0

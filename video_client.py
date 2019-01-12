@@ -8,7 +8,7 @@ def main():
     socket = context.socket(zmq.SUB)
 
     print("Collecting images from server...")
-    socket.connect("tcp://10.0.0.11:5556")
+    socket.connect("tcp://10.0.0.71:5556")
 
     g_run = True
     num_frames = 0
@@ -29,7 +29,9 @@ def main():
             success, image = image_wrapper.get_open_cv_image()
             if success:
                 cv2.imshow("display", image)
-                cv2.waitKey(1)
+                key = cv2.waitKey(1)
+                if key == 'q':
+                    g_run = False
 
         except KeyboardInterrupt:
             print("Interrupt received, stopping...")
